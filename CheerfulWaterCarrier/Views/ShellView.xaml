@@ -1,0 +1,24 @@
+﻿<Window x:Class="CheerfulWaterCarrier.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CheerfulWaterCarrier.Views"
+        mc:Ignorable="d" FontSize="24"
+        WindowStartupLocation="CenterScreen"
+        Title="ShellView" Height="600" Width="900">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button x:Name="LoadEmployeesList" Content="Сотрудники" Margin="0 0 20 0" />
+            <Button x:Name="LoadSubdivisionsList" Content="Подразделения" Margin="0 0 20 0" />
+            <Button x:Name="LoadOrdersList" Content="Заказы"/>
+        </StackPanel>
+        
+        <ContentControl Grid.Row="1"  x:Name="ActiveItem" />
+    </Grid>
+</Window>
