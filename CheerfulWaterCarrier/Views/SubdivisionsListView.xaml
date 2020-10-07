@@ -26,8 +26,14 @@
         </StackPanel>
 
         <ScrollViewer Grid.Row="2">
-            <DataGrid x:Name="Subdivisions" IsReadOnly="True"
-                      SelectedItem="{Binding SelectedSubdivision, Mode=OneWayToSource}" />
+            <DataGrid x:Name="Subdivisions" IsReadOnly="True" AutoGenerateColumns="False"
+                      SelectedItem="{Binding SelectedSubdivision, Mode=OneWayToSource}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="№" Binding="{Binding Path=SubdivisionId}"/>
+                    <DataGridTextColumn Header="№ руководителя" Binding="{Binding Path=SupervisorId}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
         </ScrollViewer>
     </Grid>
 </UserControl>

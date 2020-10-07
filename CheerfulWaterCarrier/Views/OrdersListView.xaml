@@ -26,8 +26,14 @@
         </StackPanel>
 
         <ScrollViewer Grid.Row="2">
-            <DataGrid x:Name="Orders" IsReadOnly="True"
-                      SelectedItem="{Binding SelectedOrder, Mode=OneWayToSource}" />
+            <DataGrid x:Name="Orders" IsReadOnly="True" AutoGenerateColumns="False"
+                      SelectedItem="{Binding SelectedOrder, Mode=OneWayToSource}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="№" Binding="{Binding Path=OrderId}"/>
+                    <DataGridTextColumn Header="Название продукта" Binding="{Binding Path=ProductName}"/>
+                    <DataGridTextColumn Header="№ сотрудника" Binding="{Binding Path=EmployeeId}"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </ScrollViewer>
     </Grid>
 </UserControl>
